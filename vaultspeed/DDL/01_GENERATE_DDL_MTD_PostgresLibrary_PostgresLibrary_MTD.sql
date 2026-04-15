@@ -1,0 +1,93 @@
+/*
+ __     __          _ _                           _      __  ___  __   __   
+ \ \   / /_ _ _   _| | |_ ___ ____   ___  ___  __| |     \ \/ _ \/ /  /_/   
+  \ \ / / _` | | | | | __/ __|  _ \ / _ \/ _ \/ _` |      \/ / \ \/ /\      
+   \ V / (_| | |_| | | |_\__ \ |_) |  __/  __/ (_| |      / / \/\ \/ /      
+    \_/ \__,_|\__,_|_|\__|___/ .__/ \___|\___|\__,_|     /_/ \/_/\__/       
+                             |_|                                            
+
+Vaultspeed version: 6.0.0.5, generation date: 2026/03/17 17:40:49
+DV_NAME: LibraryPostgres - Release: Four(4) - Comment: turn off obj spec loading - Release date: 2026/03/17 17:39:12, 
+SRC_NAME: PostgresLibrary - Release: PostgresLibrary(5) - Comment: turn off obj spec loading - Release date: 2026/03/17 17:38:27
+ */
+
+/* DROP TABLES */
+-- START
+DROP TABLE IF EXISTS "PostgresLibrary_MTD"."FMC_LOADING_WINDOW_TABLE" 
+CASCADE
+;
+DROP TABLE IF EXISTS "PostgresLibrary_MTD"."LOAD_CYCLE_INFO" 
+CASCADE
+;
+DROP TABLE IF EXISTS "PostgresLibrary_MTD"."MTD_EXCEPTION_RECORDS" 
+CASCADE
+;
+
+-- END
+
+
+/* CREATE TABLES */
+-- START
+
+CREATE   TABLE "PostgresLibrary_MTD"."FMC_LOADING_WINDOW_TABLE"
+(
+	"FMC_BEGIN_LW_TIMESTAMP" TIMESTAMP,
+	"FMC_END_LW_TIMESTAMP" TIMESTAMP
+)
+;
+
+COMMENT ON TABLE "PostgresLibrary_MTD"."FMC_LOADING_WINDOW_TABLE" IS 'DV_NAME: LibraryPostgres - Release: Four(4) - Comment: turn off obj spec loading - Release date: 2026/03/17 17:39:12, 
+SRC_NAME: PostgresLibrary - Release: PostgresLibrary(5) - Comment: turn off obj spec loading - Release date: 2026/03/17 17:38:27';
+
+
+CREATE   TABLE "PostgresLibrary_MTD"."LOAD_CYCLE_INFO"
+(
+	"LOAD_CYCLE_ID" INTEGER,
+	"LOAD_DATE" TIMESTAMP
+)
+;
+
+COMMENT ON TABLE "PostgresLibrary_MTD"."LOAD_CYCLE_INFO" IS 'DV_NAME: LibraryPostgres - Release: Four(4) - Comment: turn off obj spec loading - Release date: 2026/03/17 17:39:12, 
+SRC_NAME: PostgresLibrary - Release: PostgresLibrary(5) - Comment: turn off obj spec loading - Release date: 2026/03/17 17:38:27';
+
+
+CREATE   TABLE "PostgresLibrary_MTD"."MTD_EXCEPTION_RECORDS"
+(
+	"LOAD_CYCLE_ID" VARCHAR(3),
+	"RECORD_TYPE" VARCHAR(3),
+	"KEY_ATTRIBUTE_BIGINT" VARCHAR(20),
+	"KEY_ATTRIBUTE_BOOLEAN" VARCHAR(5),
+	"KEY_ATTRIBUTE_DATE" VARCHAR(10),
+	"KEY_ATTRIBUTE_DOUBLE_PRECISION" VARCHAR(3),
+	"KEY_ATTRIBUTE_INTEGER" VARCHAR(11),
+	"KEY_ATTRIBUTE_NUMERIC" VARCHAR(3),
+	"KEY_ATTRIBUTE_TEXT" VARCHAR(3),
+	"KEY_ATTRIBUTE_TIMESTAMP" VARCHAR(19),
+	"KEY_ATTRIBUTE_TIMESTAMP_WITH_TIME_ZONE" VARCHAR(19),
+	"KEY_ATTRIBUTE_VARCHAR" VARCHAR(3),
+	"ATTRIBUTE_BIGINT" VARCHAR(20),
+	"ATTRIBUTE_BOOLEAN" VARCHAR(5),
+	"ATTRIBUTE_DATE" VARCHAR(10),
+	"ATTRIBUTE_DOUBLE_PRECISION" VARCHAR(3),
+	"ATTRIBUTE_INTEGER" VARCHAR(11),
+	"ATTRIBUTE_NUMERIC" VARCHAR(3),
+	"ATTRIBUTE_TEXT" VARCHAR(3),
+	"ATTRIBUTE_TIMESTAMP" VARCHAR(19),
+	"ATTRIBUTE_TIMESTAMP_WITH_TIME_ZONE" VARCHAR(19),
+	"ATTRIBUTE_VARCHAR" VARCHAR(3)
+)
+;
+
+COMMENT ON TABLE "PostgresLibrary_MTD"."MTD_EXCEPTION_RECORDS" IS 'DV_NAME: LibraryPostgres - Release: Four(4) - Comment: turn off obj spec loading - Release date: 2026/03/17 17:39:12, 
+SRC_NAME: PostgresLibrary - Release: PostgresLibrary(5) - Comment: turn off obj spec loading - Release date: 2026/03/17 17:38:27';
+
+
+INSERT INTO "PostgresLibrary_MTD"."MTD_EXCEPTION_RECORDS"
+("LOAD_CYCLE_ID", "RECORD_TYPE", "KEY_ATTRIBUTE_BIGINT", "KEY_ATTRIBUTE_BOOLEAN", "KEY_ATTRIBUTE_DATE", "KEY_ATTRIBUTE_DOUBLE_PRECISION", "KEY_ATTRIBUTE_INTEGER", "KEY_ATTRIBUTE_NUMERIC", "KEY_ATTRIBUTE_TEXT", "KEY_ATTRIBUTE_TIMESTAMP", "KEY_ATTRIBUTE_TIMESTAMP_WITH_TIME_ZONE", "KEY_ATTRIBUTE_VARCHAR", "ATTRIBUTE_BIGINT", "ATTRIBUTE_BOOLEAN", "ATTRIBUTE_DATE", "ATTRIBUTE_DOUBLE_PRECISION", "ATTRIBUTE_INTEGER", "ATTRIBUTE_NUMERIC", "ATTRIBUTE_TEXT", "ATTRIBUTE_TIMESTAMP", "ATTRIBUTE_TIMESTAMP_WITH_TIME_ZONE", "ATTRIBUTE_VARCHAR") VALUES ('-2','U','-9223372036854775807','false','01/01/2899','-2','-2147483647','-2','~?~','01/01/2899 00:00:00','01/01/2899 00:00:00','~?~','-9223372036854775807','false','01/01/2899','-2','-2147483647','-2','~?~','01/01/2899 00:00:00','01/01/2899 00:00:00','~?~');
+
+INSERT INTO "PostgresLibrary_MTD"."MTD_EXCEPTION_RECORDS"
+("LOAD_CYCLE_ID", "RECORD_TYPE", "KEY_ATTRIBUTE_BIGINT", "KEY_ATTRIBUTE_BOOLEAN", "KEY_ATTRIBUTE_DATE", "KEY_ATTRIBUTE_DOUBLE_PRECISION", "KEY_ATTRIBUTE_INTEGER", "KEY_ATTRIBUTE_NUMERIC", "KEY_ATTRIBUTE_TEXT", "KEY_ATTRIBUTE_TIMESTAMP", "KEY_ATTRIBUTE_TIMESTAMP_WITH_TIME_ZONE", "KEY_ATTRIBUTE_VARCHAR", "ATTRIBUTE_BIGINT", "ATTRIBUTE_BOOLEAN", "ATTRIBUTE_DATE", "ATTRIBUTE_DOUBLE_PRECISION", "ATTRIBUTE_INTEGER", "ATTRIBUTE_NUMERIC", "ATTRIBUTE_TEXT", "ATTRIBUTE_TIMESTAMP", "ATTRIBUTE_TIMESTAMP_WITH_TIME_ZONE", "ATTRIBUTE_VARCHAR") VALUES ('-1','N','-9223372036854775808','false','01/01/2999','-1','-2147483648','-1','0','01/01/2999 00:00:00','01/01/2999 00:00:00','0','-9223372036854775808','false','01/01/2999','-1','-2147483648','-1','0','01/01/2999 00:00:00','01/01/2999 00:00:00','0');
+
+-- END
+
+
